@@ -11,5 +11,5 @@ interface ApiService {
     suspend fun getProducts():List<Product>
 
     @POST("server/native_Db_V13.php?axn=save/taskproddets&divisionCode=258")
-    suspend fun updateProduct(@Body request:ProductRequest): Call<Void>
+    suspend fun updateProduct(@Body request:ProductRequest)
 }

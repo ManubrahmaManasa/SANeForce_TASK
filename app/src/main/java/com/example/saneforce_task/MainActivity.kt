@@ -1,6 +1,7 @@
 package com.example.saneforce_task
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -12,6 +13,7 @@ import com.example.saneforce_task.databinding.ActivityMainBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import retrofit2.Callback
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,6 +32,8 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+
+
         binding.productsRv.layoutManager = LinearLayoutManager(this)
 
         viewModel = ViewModelProvider(this)[MyViewModel::class.java]
@@ -39,6 +43,9 @@ class MainActivity : AppCompatActivity() {
             adapter = MyAdapter(viewModel.item)
             binding.productsRv.adapter = adapter
         }
+
+       /* viewModel = ViewModelProvider(this)[MyViewModel::class.java]
+        viewModel.saveProduct()*/
 
 
     }
